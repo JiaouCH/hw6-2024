@@ -1,6 +1,4 @@
 var video = document.querySelector('.video');
-var volume_value = document.querySelector('#volume')
-var volume_slider_value = document.querySelector('#slider')
 
 window.addEventListener("load", function() {
 	console.log("Good job opening the window")
@@ -9,11 +7,6 @@ window.addEventListener("load", function() {
 	console.log("Auto play is set to ", false);
 	console.log("Loop is set to ", false);
 });
-
-function updateVolumeInfo(){
-	console.log("Current Volume: " + volume_slider.value);
-	volume_value.innerHTML=volume_slider.value+"%"
-}
 
 document.querySelector("#play").addEventListener("click", function() {
 	console.log("Play Video");
@@ -66,11 +59,15 @@ document.querySelector("#mute").addEventListener("click", function() {
 	}
 });
 
+
+var volume_value = document.querySelector('#volume')
+var volume_slider_value = document.querySelector('#slider')
+
 document.querySelector("#slider").addEventListener("click", function(){
 	console.log("Change Volume");
 	volume_value.innerHTML=volume_slider_value.value+"%"
-	video.volume=volume_slider_value.value/100
 	console.log("The current value is", volume_slider_value.value);
+	video.volume=volume_slider_value.value/100
 })
 
 document.querySelector("#vintage").addEventListener("click", function(){
